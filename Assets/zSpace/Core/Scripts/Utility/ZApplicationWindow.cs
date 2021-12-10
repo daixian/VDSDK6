@@ -34,24 +34,26 @@ namespace zSpace.Core.Utility
         {
             get
             {
-#if UNITY_EDITOR
-                // Grab the position and size of the GameView window
-                // when running from the editor.
-                EditorWindow gameViewWindow = 
-                    EditorWindowExtensions.GetGameViewWindow();
+                // dx:ͳһ1920x1080
+                return new RectInt(0, 0, 1920, 1080);
+//#if UNITY_EDITOR
+//                // Grab the position and size of the GameView window
+//                // when running from the editor.
+//                EditorWindow gameViewWindow = 
+//                    EditorWindowExtensions.GetGameViewWindow();
 
-                return gameViewWindow.GetRect();
-#elif UNITY_STANDALONE_WIN
-                // Grab the position and size of the standalone player's
-                // window when running a standalone build.
-                int x = 0;
-                int y = 0;
-                ZPlugin.GetWindowPosition(out x, out y);
+//                return gameViewWindow.GetRect();
+//#elif UNITY_STANDALONE_WIN
+//                // Grab the position and size of the standalone player's
+//                // window when running a standalone build.
+//                int x = 0;
+//                int y = 0;
+//                ZPlugin.GetWindowPosition(out x, out y);
 
-                return new RectInt(x, y, Screen.width, Screen.height);
-#else
-                return new RectInt(0, 0, Screen.width, Screen.height);
-#endif
+//                return new RectInt(x, y, Screen.width, Screen.height);
+//#else
+//                return new RectInt(0, 0, Screen.width, Screen.height);
+//#endif
             }
         }
 
@@ -70,7 +72,7 @@ namespace zSpace.Core.Utility
 #if UNITY_EDITOR
                 return Rect.size;
 #else
-                return new Vector2Int(Screen.width, Screen.height);
+                return new Vector2Int(1920, 1080);
 #endif
             }
         }

@@ -131,8 +131,11 @@ namespace zSpace.zView
         private void UpdateImageResolution(ZView zView, IntPtr connection)
         {
             // Get the current viewport size.
-            UInt16 imageWidth = (UInt16)Screen.currentResolution.width;
-            UInt16 imageHeight = (UInt16)Screen.currentResolution.height;
+            //UInt16 imageWidth = (UInt16)Screen.currentResolution.width;
+            //UInt16 imageHeight = (UInt16)Screen.currentResolution.height;
+            // dx:统一1920x1080
+            UInt16 imageWidth = 1920;
+            UInt16 imageHeight = 1080;
 
             // Set image width and height.
             if (imageWidth != _imageWidth || imageHeight != _imageHeight)
