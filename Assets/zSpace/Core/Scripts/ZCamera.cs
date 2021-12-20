@@ -451,13 +451,13 @@ namespace zSpace.Core
             if (this.EnableLR && this.EnableStereo &&
                 this._headTarget != null)
             {
-                if (this._headTarget.IsVisible)
+                if ((this._leftCamera.transform.position - this._rightCamera.transform.position).magnitude > 1e-6)
                 {
                     this._leftCamera.rect = new Rect(0, 0, 0.5f, 1);
                     this._rightCamera.rect = new Rect(0.5f, 0, 0.5f, 1);
                 }
-                if (this.StereoWeight == 0)
-                {
+                else {
+                    //让相机恢复渲染整个画面,但是由于有的机器没有启动切换2/3D模式,那么这里可以注释掉
                     this._leftCamera.rect = new Rect(0, 0, 1, 1);
                     this._rightCamera.rect = new Rect(0, 0, 1, 1);
                 }
