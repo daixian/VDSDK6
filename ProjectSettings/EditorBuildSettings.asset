@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/zSpace/zView/Samples/BasicPresenterSample.unity
-    guid: a42d0faab70c0714d86573fc6c41c07b
+    path: Assets/zSpace/Core/Samples/Scenes/02_BasicScene_WithZSpace.unity
+    guid: 96836f14a4e21c7408365db44622c98b
   m_configObjects: {}

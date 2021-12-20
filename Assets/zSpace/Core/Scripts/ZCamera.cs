@@ -81,6 +81,12 @@ namespace zSpace.Core
         public RenderMode StereoRenderMode = RenderMode.SingleCamera;
 
         /// <summary>
+        /// 用于某些非帧连续的屏幕的机器，只能把画面输出成一个左右格式.
+        /// </summary>
+        [Tooltip("dx:是否使用LR模式渲染.")]
+        public bool EnableLR = false;
+
+        /// <summary>
         /// The left eye camera to be used when StereoRenderMode is set to
         /// RenderMode.MultiCamera.
         /// </summary>
@@ -439,6 +445,23 @@ namespace zSpace.Core
 
                 this._rightCamera.transform.SetPose(
                     this.GetPose(ZEye.Right), true);
+            }
+
+            //dx:输出左右LR的画面
+            if (this.EnableLR && this.EnableStereo &&
+                this._headTarget != null)
+            {
+                if (this._headTarget.IsVisible)
+                {
+                    this._leftCamera.rect = new Rect(0, 0, 0.5f, 1);
+                    this._rightCamera.rect = new Rect(0.5f, 0, 0.5f, 1);
+                }
+                if (this.StereoWeight == 0)
+                {
+                    this._leftCamera.rect = new Rect(0, 0, 1, 1);
+                    this._rightCamera.rect = new Rect(0, 0, 1, 1);
+                }
+
             }
         }
 
