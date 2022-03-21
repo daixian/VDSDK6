@@ -1,5 +1,5 @@
 # SDK6
-zspace6.0的SDK,本项目使用Unity2019.4.32f1构建。
+该示例项目基于zspace6.0的SDK,本项目使用Unity2019.4.32f1从零开始构建工程。
 
 # 从零构建工程
 ## 下载zspace6.0的SDK
@@ -23,8 +23,8 @@ zspace6.0的SDK,本项目使用Unity2019.4.32f1构建。
 * 添加一项
     <div align=center><img src="https://user-images.githubusercontent.com/15939998/145576266-e0d55822-181e-419b-a915-8f44bf20f77e.png" width="500"></div>
 
-* 添加需要的项,删除不需要的项最后如图
-  <div align=center><img src="https://user-images.githubusercontent.com/15939998/145576266-e0d55822-181e-419b-a915-8f44bf20f77e.png" width="500"></div>
+* 添加需要的Stereo Display(non head-mounted)这项，删除不需要的项，最后如图
+  <div align=center><img src="https://user-images.githubusercontent.com/15939998/145576275-a064c221-6590-41c9-9726-7409ff498ca7.png" width="500"></div>
 
 此时已经完成了一个初始zSpace空项目的创建.
 
